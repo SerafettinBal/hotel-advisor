@@ -1,0 +1,14 @@
+
+<div class= "container"></div>
+    <div class="homebackground"><img class="logo" src="/assets/img/logoElektra.png" alt="image">
+        
+        
+            <form class="example-form">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Kart Numarası</mat-label>
+                  <input  matInput placeholder="6 haneli kart numaranızı giriniz." value="" #cardNo>
+                </mat-form-field>
+              
+              </form>
+        
+        <button class="login-button" (click)= "getCard(cardNo.value)" mat-raised-button color="primary"> SORGULA</button></div>

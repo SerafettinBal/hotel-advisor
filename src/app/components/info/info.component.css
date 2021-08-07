@@ -1,0 +1,66 @@
+
+.card {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 800px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F9F8E4;
+    border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  }
+
+  .cardTitle{
+      text-align: center;
+      font-size:200%;
+      padding: 5%;
+      font-family:fantasy;
+      width: 94%;
+      size: 30px;
+      background-color: #B8B6A6;
+      border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 0px 0px;
+  }
+  
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
+
+  .example-form {
+    flex-direction: row;
+    margin-top: 7%;
+    margin-left: 2%;
+    margin-right: auto;
+    margin-bottom: 4%;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    color: #000000;
+    
+  }
+  
+  .example-full-width {
+    width: 45%;
+    margin-right: 5%;
+  }
+  .example-flex-container{
+      margin-bottom: 5%;
+      margin-left: 85%;
+      background-color: red;
+      
+    }
