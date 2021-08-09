@@ -13,7 +13,39 @@ export class ApiserviceService{
 
     constructor(private http: HttpClient){}
     
-    findCard(model: GetCardModel): Observable<[[GetCardResponseModel]]>{
-        return this.http.post<[[GetCardResponseModel]]>(this.baseURL,model);
-    }
+    // findCard(model: GetCardModel): Observable<[[GetCardResponseModel]]>{
+    //     return this.http.post<[[GetCardResponseModel]]>(this.baseURL,model);
+    // }
+}
+export interface RootObject {
+    Success: number;
+    RESNAMEID: number;
+    GUESTNAME: string;
+    GUESTSURNAME: string;
+    AGENCYID: number;
+    AGENCY: string;
+    ROOMTYPEID: number;
+    ROOMTYPE: string;
+    BOARDTYPEID: number;
+    BOARDTYPE: string;
+    POSDISCOUNTGROUPID?: any;
+    POSDISCOUNTGROUP?: any;
+    BALANCE: number;
+    LOADED: number;
+    REFUND: number;
+    SPENT: number;
+    CURRENCYID: number;
+    CARDNO: string;
+
+    
+}
+export interface ApiSPOptions{
+    Action:string;
+    Object:string;
+    Parameters?:{
+        [CARDNO: string]: any,
+        [HOTELID: number]: any
+    };
+    
+
 }

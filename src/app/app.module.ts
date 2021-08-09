@@ -14,12 +14,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import {MatIconModule} from '@angular/material/icon';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     InfoComponent,
-    LoginComponent
+    LoginComponent,
+   
 
   ],
   imports: [

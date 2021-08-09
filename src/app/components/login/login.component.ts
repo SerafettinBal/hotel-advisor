@@ -18,12 +18,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getCard(cardNo:string){
+  // getCard(cardNo:string){
 
-    this.requestModel.Parameters.CARDNO= Number(cardNo)
-    this.service.findCard(this.requestModel).subscribe(model=>{
-      console.log(model)
-    })
-  }
+  //   this.requestModel.Parameters.CARDNO= Number(cardNo)
+  //   this.service.findCard(this.requestModel).subscribe(model=>{
+  //     console.log(model)
+  //   })
+  // }
 
 }
