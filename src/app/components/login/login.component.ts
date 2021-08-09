@@ -11,6 +11,7 @@ import { GetCardResponseModel } from 'src/app/models/GetCardResponseModel';
 })
 export class LoginComponent implements OnInit {
 
+  baseURL: string="https://4001.hoteladvisor.net/"
   requestModel: GetCardModel=new GetCardModel("Execute","SP_POS_FINDENTRYCARD",new Parameters())
   
   constructor(private service: ApiserviceService) { }
@@ -18,12 +19,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // getCard(cardNo:string){
+  getCard(cardNo:string){
 
-  //   this.requestModel.Parameters.CARDNO= Number(cardNo)
-  //   this.service.findCard(this.requestModel).subscribe(model=>{
-  //     console.log(model)
-  //   })
-  // }
+    this.requestModel.Parameters.CARDNO= Number(cardNo)
+    this.service.findCard(this.requestModel).subscribe(model=>{
+      console.log(model)
+    })
+  }
+
 
 }

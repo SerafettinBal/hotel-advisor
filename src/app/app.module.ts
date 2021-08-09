@@ -21,7 +21,7 @@ import {MatIconModule} from '@angular/material/icon';
     HeaderComponent,
     InfoComponent,
     LoginComponent,
-   
+  
 
   ],
   imports: [
