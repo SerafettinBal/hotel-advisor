@@ -1,7 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import {GetCardModel, Parameters} from '../models/GetCardModel';
+import { Observable } from "rxjs"; 
 import { GetCardResponseModel } from '../models/GetCardResponseModel';
 
 @Injectable({
@@ -13,7 +12,9 @@ export class ApiserviceService{
 
     constructor(private http: HttpClient){}
     
-    findCard(model: GetCardModel): Observable<[[GetCardResponseModel]]>{
-        return this.http.post<[[GetCardResponseModel]]>(this.baseURL,model);
+    findCard(json:any): Observable<[[GetCardResponseModel]]>{
+        return this.http.post<[[GetCardResponseModel]]>(this.baseURL,json);
     }
+
+    // findCardDetail   olustur.
 }

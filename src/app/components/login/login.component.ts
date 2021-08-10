@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiserviceService } from 'src/app/services/apiservice.service';
-import { GetCardModel, Parameters } from 'src/app/models/GetCardModel';
+import { ApiserviceService } from 'src/app/services/apiservice.service'; 
 import { GetCardResponseModel } from 'src/app/models/GetCardResponseModel';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,20 +11,32 @@ import { GetCardResponseModel } from 'src/app/models/GetCardResponseModel';
 })
 export class LoginComponent implements OnInit {
 
-  baseURL: string="https://4001.hoteladvisor.net/"
-  requestModel: GetCardModel=new GetCardModel("Execute","SP_POS_FINDENTRYCARD",new Parameters())
+  baseURL: string="https://4001.hoteladvisor.net/" 
+  model: GetCardResponseModel | undefined
   
-  constructor(private service: ApiserviceService) { }
+  constructor(private service: ApiserviceService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   getCard(cardNo:string){
-
-    this.requestModel.Parameters.CARDNO= Number(cardNo)
-    this.service.findCard(this.requestModel).subscribe(model=>{
-      console.log(model)
+   
+  var request =  {
+      "Action": "Execute",
+      "Object":"SP_POS_FINDENTRYCARD",
+      "Parameters": {
+              "HOTELID": 20854,
+              "CARDNO": cardNo
+      }
+  };
+ 
+    this.service.findCard(request).subscribe(model=>{
+      this.model = model[0][0]
+      this.router.navigate(['/info', this.model]);
     })
+    
+
+
   }
 
 
