@@ -8,11 +8,20 @@ import { GetCardResponseModel } from 'src/app/models/GetCardResponseModel';
   styleUrls: ['./info.component.css']
 })
 export class InfoComponent implements OnInit {
-  model: GetCardResponseModel | undefined
+  model: GetCardResponseModel = new GetCardResponseModel;
+  
   constructor(private route: ActivatedRoute) { }
 
-  ngOnInit(): void {  
-    console.log(this.route.snapshot.params) 
+  ngOnInit(): void { 
+
+    this.route.paramMap.subscribe(i => { 
+      let x = i.get("model")
+      if(x != null) {
+        this.model = JSON.parse(x)
+      }  
+      console.log(this.model) 
+    })
+    
   }
 }
  

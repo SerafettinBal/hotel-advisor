@@ -1,51 +1,50 @@
-
 <div class="card">
     <div class="cardTitle">Kart Bilgileri </div>
     <div>
     <form class="example-form">
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>a</mat-label>
-          <input matInput placeholder="">
+          <mat-label>Müşteri ID'si</mat-label>
+          <input matInput placeholder="" value="{{model.RESNAMEID}}">
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>{{model?.CARDNO}}</mat-label>
-          <input matInput placeholder="">
+          <mat-label>Kart Numarası</mat-label>
+          <input matInput placeholder="" value="{{model.CARDNO}}">
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>{{model?.GUESTNAME}} Soyad</mat-label>
-          <input matInput placeholder="">
+          <mat-label>Müşteri İsmi</mat-label>
+          <input matInput placeholder="" value="{{model.GUESTNAME}}  {{model.GUESTSURNAME}}">
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Telefon</mat-label>
-          <input matInput placeholder="">
+          <mat-label>Acenta Numarası</mat-label>
+          <input matInput placeholder="" value="{{model.AGENCYID}}">
         </mat-form-field></form>
     </div>
     <div>
     <form class="example-form">
     <mat-form-field  class="example-full-width" appearance="fill" floatLabel="always">
         <mat-label>Yüklenen</mat-label>
-        <input matInput type="number" class="example-right-align" placeholder="0">
+        <input matInput type="number" class="example-right-align" placeholder="0" value="{{model.LOADED}}">
         <span matPrefix>$&nbsp;</span>
         <span matSuffix>.00</span>
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
         <mat-label>Harcanan</mat-label>
-        <input matInput type="number" class="example-right-align" placeholder="0">
+        <input matInput type="number" class="example-right-align" placeholder="0" value="{{model.SPENT}}">
         <span matPrefix>$&nbsp;</span>
         <span matSuffix>.00</span>
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
-        <mat-label>İade</mat-label>
-        <input matInput type="number" class="example-right-align" placeholder="0">
+        <mat-label>İade</mat-label>  
+        <input matInput type="number" class="example-right-align" placeholder="0" value="{{model.REFUND}}">
         <span matPrefix>$&nbsp;</span>
         <span matSuffix>.00</span>
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill" floatLabel="always">
         <mat-label>Bakiye</mat-label>
-        <input matInput type="number" class="example-right-align" placeholder="0">
+        <input matInput type="number" class="example-right-align" placeholder="0" value="{{model.BALANCE}}">
         <span matPrefix>$&nbsp;</span>
         <span matSuffix>.00</span>
       </mat-form-field>

@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   baseURL: string="https://4001.hoteladvisor.net/" 
-  model: GetCardResponseModel | undefined
   
+  model: GetCardResponseModel | undefined;
   constructor(private service: ApiserviceService, private router: Router) { }
 
   ngOnInit(): void {
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
  
     this.service.findCard(request).subscribe(model=>{
       this.model = model[0][0]
-      this.router.navigate(['/info', this.model]);
+      this.router.navigate(['/info', {"model" : JSON.stringify(this.model) }]);
     })
     
 
