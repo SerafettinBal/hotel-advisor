@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs"; 
 import { GetCardResponseModel } from '../models/GetCardResponseModel';
-
+import { GetCardDetailsModel } from '../models/GetCardDetailsModel';
 @Injectable({
     providedIn: 'root'
 })
@@ -16,5 +16,7 @@ export class ApiserviceService{
         return this.http.post<[[GetCardResponseModel]]>(this.baseURL,json);
     }
 
-    // findCardDetail   olustur.
+    findCardDetails(json:any): Observable<[[GetCardDetailsModel]]>{
+        return this.http.post<[[GetCardDetailsModel]]>(this.baseURL,json);
+    }
 }
