@@ -17,9 +17,7 @@ export class LoginComponent implements OnInit {
   getCard(cardNo:string){
    
   
- 
-      
-      this.router.navigate(['/info',{'cardNo': cardNo}]);
+    this.router.navigate([ '/info' ], { queryParams: { cardNo: cardNo } }) 
     }
     
     

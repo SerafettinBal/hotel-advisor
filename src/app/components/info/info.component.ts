@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GetCardResponseModel } from 'src/app/models/GetCardResponseModel';
 import { GetCardDetailsModel } from 'src/app/models/GetCardDetailsModel';
 import { ApiserviceService } from 'src/app/services/apiservice.service';
+import { areAllEquivalent } from '@angular/compiler/src/output/output_ast';
 
 
 
@@ -24,15 +25,10 @@ export class InfoComponent implements OnInit {
 
   ngOnInit(): void {
 
-
-
-    this.route.paramMap.subscribe(data => {
-      let x = data.get("cardNo")
-      if (x != null) {
-        this.cardno = JSON.parse(x)
-      }
-     
+    this.route.queryParams.subscribe( i => {
+      this.cardno = i["cardNo"]
     })
+
     var request = {
       "Action": "Execute",
     "Object":"SP_POS_FINDENTRYCARD",
@@ -41,6 +37,8 @@ export class InfoComponent implements OnInit {
             "CARDNO": this.cardno
       }
     };
+
+    
 
     this.service.findCard(request).subscribe(model => {
       this.model = model[0][0];
@@ -54,6 +52,8 @@ export class InfoComponent implements OnInit {
 
   step = 0;
 
+ 
+
   setStep(index: number) {
     this.step = index;
   }
@@ -66,7 +66,6 @@ export class InfoComponent implements OnInit {
     this.step--;
   }
   
-
   getCardDetails() {
 
     var request = {

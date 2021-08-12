@@ -59,7 +59,7 @@
         <span matSuffix>.00</span>
       </mat-form-field>
     </form>
-    <qr-code value="Yo world!" size="300" errorCorrectionLevel="M"></qr-code>
+    
     
     <div class="panel">
       <mat-accordion class="example-headers-align">
@@ -105,6 +105,22 @@
                 <td><b>{{getTotalCost()}}</b></td>
               </tfoot>
             </table>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="panel">
+      <mat-accordion class="example-headers-align">
+        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <button >
+                QR Kod 
+              </button>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="example-container mat-elevation-z8">
+            <qr-code class="qrcode" value="https://www.elektraweb.com/" size="300" errorCorrectionLevel="M"></qr-code>
           </div>
         </mat-expansion-panel>
       </mat-accordion>
