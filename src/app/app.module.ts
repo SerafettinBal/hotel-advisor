@@ -15,6 +15,8 @@ import { LoginComponent } from './components/login/login.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
+import { QrCodeModule } from 'ng-qrcode';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,8 @@ import {MatTableModule} from '@angular/material/table';
     HttpClientModule,
     MatIconModule,
     MatExpansionModule,
-    MatTableModule
+    MatTableModule,
+    QrCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

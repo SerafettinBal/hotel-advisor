@@ -59,7 +59,8 @@
         <span matSuffix>.00</span>
       </mat-form-field>
     </form>
-    <div></div>
+    <qr-code value="Yo world!" size="300" errorCorrectionLevel="M"></qr-code>
+    
     <div class="panel">
       <mat-accordion class="example-headers-align">
         <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
@@ -79,6 +80,8 @@
                 <th>Ad</th>
                 <th>Soyad</th>
                 <th>Dep. Adı</th>
+                <th>Gelir Adı</th>
+                <th>Folyo Notu</th>
                 <th>Toplam</th>
                 <th>Dövizli Tutar</th>
                 <th>Döviz</th>
@@ -90,12 +93,17 @@
                 <td>{{data.NAME}}</td>
                 <td>{{data.LNAME}}</td>
                 <td>{{data.DEPNAME}}</td>
+                <td>{{data.REVENUENAME}}</td>
+                <td>{{data.FOLIONOTE}}</td>
                 <td>{{data.TOTAL}}</td>
                 <td>{{data.CTOTAL}}</td>
                 <td>{{data.CURRENCY}}</td>
                 
               </tr>
-              
+              <tfoot>
+                <td colspan="8"></td>
+                <td><b>{{getTotalCost()}}</b></td>
+              </tfoot>
             </table>
           </div>
         </mat-expansion-panel>

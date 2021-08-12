@@ -85,9 +85,8 @@ export class InfoComponent implements OnInit {
 
   }
 
-  /* Gets the total cost of all transactions. */
-  // getTotalCost() {
-  //   return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
-  // }
+  getTotalCost() {
+    return this.model2.map(t => t.TOTAL).reduce((acc, value) => acc + value, 0);
+  }
 
 }
